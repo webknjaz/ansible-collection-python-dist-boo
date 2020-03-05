@@ -72,16 +72,16 @@ The published dists are then installable by::
 
 and
 
-  ::
+::
 
     $ pip install ansible-collections.python.dist.boo \
           -i https://test.pypi.org/simple/ --pre  # for TestPyPI
 
 If you're learning by example, take a look at the following files:
 
-  * ``pyproject.toml``
-  * ``setup.cfg``
-  * ``.github/workflows/publish-to-test-pypi.yml``
+* ``pyproject.toml``
+* ``setup.cfg``
+* ``.github/workflows/publish-to-test-pypi.yml``
 
 Besides, you can follow a `PyPA guide about publishing packages via
 GitHub Actions`_ that will walk you through the process.
