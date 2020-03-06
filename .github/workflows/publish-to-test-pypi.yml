@@ -24,6 +24,8 @@ jobs:
         Set setuptools-scm to not append
         any local version to the
         distribution metadata
+      if: >-
+        !startsWith(github.event.ref, 'refs/tags')
       run: >-
         echo
         'local_scheme = "no-local-version"'
