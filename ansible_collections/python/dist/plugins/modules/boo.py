@@ -6,7 +6,10 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 """Say hello."""
-from __future__ import absolute_import, print_function, unicode_literals
+
+from __future__ import (
+    absolute_import, division, print_function, unicode_literals,
+)
 __metaclass__ = type
 
 
@@ -45,13 +48,13 @@ EXAMPLES = """
 """
 
 
-import six
-
 from ansible.module_utils.basic import AnsibleModule
 
 
 class BooModuleError(RuntimeError):
-    def __init__(self, msg, error_args={}, *args, **kwargs):
+    def __init__(self, msg, error_args=None, *args, **kwargs):
+        if error_args is None:
+            error_args = {}
         super(BooModuleError, self).__init__(msg, *args, **kwargs)
 
         self.error_args = error_args
